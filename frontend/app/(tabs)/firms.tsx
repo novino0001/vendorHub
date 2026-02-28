@@ -10,7 +10,7 @@ import {
   Alert,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import api from '../utils/api';
+import api from '@/utils/api';
 
 interface Firm {
   id: string;
