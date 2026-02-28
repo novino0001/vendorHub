@@ -167,15 +167,18 @@ backend:
   
   - task: "Update Vendor Profile"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "PUT /api/vendors/me endpoint implemented. Needs end-to-end testing with frontend."
+      - working: true
+        agent: "testing"
+        comment: "Comprehensive testing completed. PUT /api/vendors/me endpoint working correctly. Successfully updated vendor profile fields (vendor_name, short_bio, employee_count). Returns updated profile data with all fields including sensitive data for authenticated user."
   
   - task: "List BigFirms"
     implemented: true
