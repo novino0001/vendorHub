@@ -66,19 +66,19 @@ class APITester:
         
         try:
             if method.upper() == "GET":
-                response = self.session.get(url, headers=req_headers)
+                response = self.session.get(url, headers=req_headers, timeout=30)
             elif method.upper() == "POST":
-                response = self.session.post(url, json=data, headers=req_headers)
+                response = self.session.post(url, json=data, headers=req_headers, timeout=30)
             elif method.upper() == "PUT":
-                response = self.session.put(url, json=data, headers=req_headers)
+                response = self.session.put(url, json=data, headers=req_headers, timeout=30)
             elif method.upper() == "DELETE":
-                response = self.session.delete(url, headers=req_headers)
+                response = self.session.delete(url, headers=req_headers, timeout=30)
             else:
                 raise ValueError(f"Unsupported method: {method}")
             
             return response
         except Exception as e:
-            print(f"Request failed: {e}")
+            print(f"Request failed for {method} {url}: {e}")
             return None
 
     def test_seed_data(self):
