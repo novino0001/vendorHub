@@ -194,15 +194,18 @@ backend:
   
   - task: "Follow/Unfollow BigFirm"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "POST /api/firms/{id}/follow and DELETE /api/firms/{id}/unfollow implemented. Needs testing."
+      - working: true
+        agent: "testing"
+        comment: "Comprehensive testing completed. Follow/unfollow flow working perfectly. POST /api/firms/{id}/follow creates follow relationship and returns is_following: true. DELETE /api/firms/{id}/unfollow removes relationship and returns is_following: false. Handles duplicate follows gracefully. Proper 404 error when unfollowing non-followed firm."
   
   - task: "Get Following Firms"
     implemented: true
