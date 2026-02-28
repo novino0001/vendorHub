@@ -1,7 +1,7 @@
 import { Stack } from 'expo-router';
 import { useEffect } from 'react';
-import { useAuthStore } from './store/authStore';
-import LoadingScreen from './components/LoadingScreen';
+import { useAuthStore } from '../store/authStore';
+import LoadingScreen from '../components/LoadingScreen';
 
 export default function RootLayout() {
   const { loadUser, isLoading } = useAuthStore();
