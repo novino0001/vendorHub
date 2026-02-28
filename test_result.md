@@ -209,15 +209,18 @@ backend:
   
   - task: "Get Following Firms"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "GET /api/vendors/me/following endpoint implemented. Returns list of followed firms."
+      - working: true
+        agent: "testing"
+        comment: "Comprehensive testing completed. GET /api/vendors/me/following endpoint working correctly. Returns proper JSON structure with 'firms' array and 'total' count. Correctly shows followed firms with all firm details including is_following: true status. Handles empty following list gracefully."
   
   - task: "Seed Data"
     implemented: true
